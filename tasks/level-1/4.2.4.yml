@@ -33,16 +33,17 @@
     - "4.2.4"
     - scored
 
-- name: 4.2.4 - Ensure permissions on all logfiles are configured (/var/log itself)
-  lineinfile:
-      path: /etc/tmpfiles.d/var.conf
-      regexp: 'd /var/log 0755.*'
-      line: 'd /var/log 0740 - - -'
-  tags:
-    - level-1
-    - section-4
-    - "4.2.4"
-    - scored
+      # 5/12/2022 various agents break if /var/log is not 0755
+      #- name: 4.2.4 - Ensure permissions on all logfiles are configured (/var/log itself)
+      #  lineinfile:
+      #      path: /etc/tmpfiles.d/var.conf
+      #      regexp: 'd /var/log 0755.*'
+      #      line: 'd /var/log 0740 - - -'
+      #  tags:
+      #    - level-1
+      #    - section-4
+      #    - "4.2.4"
+      #    - scored
 
 - name: 4.2.4 - Ensure permissions on all logfiles are configured (wtmp)
   lineinfile:
