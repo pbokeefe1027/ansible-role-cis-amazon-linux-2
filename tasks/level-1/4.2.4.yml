@@ -91,6 +91,7 @@
   copy:
       remote_src: yes
       src: /usr/lib/systemd/rhel-dmesg
+      mode: 0755
       dest: /etc/systemd
   when: dmesg.stat.exists
   tags:
