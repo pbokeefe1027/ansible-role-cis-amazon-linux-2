@@ -100,3 +100,14 @@
     - section-5
     - "5.3.3"
     - scored
+
+- name: 5.3.3.3 - Remove Shell Script after use
+  file:
+    path: ~/copy_system_auth.sh
+    state: absent
+    tags:
+      - level-1
+      - section-5
+      - "5.3.3"
+      - scored
+
